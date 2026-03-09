@@ -28,6 +28,7 @@ export async function GET(request: NextRequest) {
     if (!error) {
       return response;
     }
+    console.error('[auth/callback] exchangeCodeForSession error:', error.message);
   }
 
   return NextResponse.redirect(`${origin}/login?error=auth`);
